@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: dev
+namePrefix: dev-
+
+resources:
+  - ../../base
+
+# Kargo's kustomize-set-image promotion step rewrites newTag here - see
+# the generated apps/kargo/promotion-task.yaml in your GitOps repo.
+images:
+  - name: hashicorp/http-echo
+    newTag: "1.0"
