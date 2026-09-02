@@ -22,12 +22,12 @@ spec:
             - "-text=hello from the sample app"
           ports:
             - containerPort: 5678
-          env:
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: demo-db-credentials
-                  key: db-password
+          # env:
+          #   - name: DB_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: demo-db-credentials
+          #         key: db-password
 ---
 apiVersion: v1
 kind: Service
